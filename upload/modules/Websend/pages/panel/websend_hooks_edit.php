@@ -90,7 +90,7 @@ if (count($hook['params'])) {
 // Page specific
 $smarty->assign(array(
     'HOOK_NAME' => Output::getClean($_GET['hook']),
-    'HOOK_DESCRIPTION' => Output::getClean($hook['description']),
+    //'HOOK_DESCRIPTION' => Output::($hook['description']),
     'ENABLE_HOOK' => $websend_language->get('language', 'enable_hook'),
     'HOOK_ENABLED' => (!is_null($db_hook) && $db_hook->enabled == 1),
     'COMMANDS_INFO' => $websend_language->get('language', 'commands_information'),

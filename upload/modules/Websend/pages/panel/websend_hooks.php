@@ -43,7 +43,8 @@ $mapped_hooks = [];
 foreach($hooks as $hook => $description) {
     $mapped_hooks[] = [
         'link' => URL::build('/panel/websend/hooks/edit', 'hook=' . Output::getClean($hook) . '&id=' . $server_id),
-        'description' => Output::getClean($description),
+        //'description' => Output::getClean($description),
+        'description' =>Output::getClean($hook),
         'enabled' => in_array($hook, $enabled_hooks)
     ];
 }
@@ -97,5 +98,3 @@ require(ROOT_PATH . '/core/templates/panel_navbar.php');
 
 $template_file = 'websend/websend_hooks.tpl';
 $template->displayTemplate($template_file, $smarty);
-
-
